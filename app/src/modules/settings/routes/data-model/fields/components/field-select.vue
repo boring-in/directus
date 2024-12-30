@@ -185,7 +185,7 @@ const tFieldType = (type: string) => t(type === 'geometry' ? 'geometry.All' : ty
 		<template v-else>
 			<draggable
 				v-if="localType === 'group'"
-				class="field-grid group nested"
+				class="fields-nested-grid group nested"
 				:model-value="nestedFields"
 				handle=".drag-handle"
 				:group="{ name: 'fields' }"
@@ -317,34 +317,81 @@ const tFieldType = (type: string) => t(type === 'geometry' ? 'geometry.All' : ty
 </template>
 
 <style lang="scss" scoped>
-@import '@/styles/mixins/form-grid';
-
 .field-select {
 	--input-height: 40px;
 	--theme--form--field--input--padding: 8px;
+
+	&.full,
+	&.fill {
+		width: 100%;
+	}
 }
 
-.quarter {
-	grid-column: span 3;
+.form-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px;
+
+	.field {
+		grid-column: 1 / -1;
+	}
 }
 
-.third {
-	grid-column: span 4;
-}
+.fields-nested-grid {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: var(--theme--form--row-gap) var(--theme--form--column-gap);
+	width: 100%;
 
-.half,
-.half-left,
-.half-space,
-.half-right {
-	grid-column: span 6;
-}
+	.quarter {
+		grid-column: span 3;
 
-.full {
-	grid-column: 1 / -1;
-}
+		@media (max-width: 959px) {
+			grid-column: 1 / -1;
+		}
+	}
 
-.fill {
-	grid-column: 1 / -1;
+	.third {
+		grid-column: span 4;
+
+		@media (max-width: 959px) {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.half,
+	.half-left,
+	.half-space {
+		grid-column: span 6;
+
+		@media (max-width: 959px) {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.half + .half,
+	.half-right {
+		grid-column: span 6;
+
+		@media (max-width: 959px) {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.full {
+		grid-column: 1 / -1;
+	}
+
+	.fill {
+		grid-column: 1 / -1;
+	}
+
+	&.nested {
+		.field :deep(.input) {
+			border: var(--theme--border-width) solid var(--theme--primary-subdued);
+		}
+	}
 }
 
 .v-input.monospace {
@@ -438,25 +485,11 @@ const tFieldType = (type: string) => t(type === 'geometry' ? 'geometry.All' : ty
 
 		.drag-handle {
 			--v-icon-color: var(--theme--primary);
-
 			margin-right: 8px;
 		}
 
 		.name {
 			flex-grow: 1;
-		}
-	}
-}
-
-.field-grid {
-	position: relative;
-	display: grid;
-	grid-gap: var(--theme--form--column-gap);
-	grid-template-columns: repeat(12, 1fr);
-
-	&.nested {
-		.field :deep(.input) {
-			border: var(--theme--border-width) solid var(--theme--primary-subdued);
 		}
 	}
 }
@@ -519,10 +552,6 @@ const tFieldType = (type: string) => t(type === 'geometry' ? 'geometry.All' : ty
 
 .spacer {
 	flex-grow: 1;
-}
-
-.form-grid {
-	--theme--form--row-gap: 24px;
 }
 
 .required {

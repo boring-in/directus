@@ -120,12 +120,12 @@ async function setNestedSort(updates?: Field[]) {
 
 <template>
 	<div class="fields-management">
-		<div v-if="lockedFields.length > 0" class="field-grid">
+		<div v-if="lockedFields.length > 0" class="fields-grid">
 			<field-select v-for="field in lockedFields" :key="field.field" disabled :field="field" />
 		</div>
 
 		<draggable
-			class="field-grid"
+			class="fields-grid"
 			:model-value="usableFields.filter((field) => isNil(field?.meta?.group))"
 			handle=".drag-handle"
 			:group="{ name: 'fields' }"
@@ -176,24 +176,65 @@ async function setNestedSort(updates?: Field[]) {
 	margin-bottom: 24px;
 }
 
-.field-grid {
+.fields-grid {
 	position: relative;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
-	gap: var(--theme--form--column-gap);
+	gap: var(--theme--form--row-gap) var(--theme--form--column-gap);
 	margin-bottom: var(--theme--form--row-gap);
+	width: 100%;
+
+	.quarter {
+		grid-column: span 3;
+
+		@media (max-width: 959px) {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.third {
+		grid-column: span 4;
+
+		@media (max-width: 959px) {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.half,
+	.half-left,
+	.half-space {
+		grid-column: span 6;
+
+		@media (max-width: 959px) {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.half + .half,
+	.half-right {
+		grid-column: span 6;
+
+		@media (max-width: 959px) {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.full {
+		grid-column: 1 / -1;
+	}
+
+	.fill {
+		grid-column: 1 / -1;
+	}
 }
 
 .field-select {
 	margin: 0;
 }
 
-.field-select:deep(.field-grid) {
-	grid-gap: var(--theme--form--column-gap);
-}
-
-.field-select:deep(.field-grid.group.nested) {
+.field-select:deep(.fields-nested-grid) {
 	margin: var(--theme--form--row-gap) 0;
+	width: 100%;
 }
 
 .add-field {

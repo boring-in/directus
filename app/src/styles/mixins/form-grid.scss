@@ -1,5 +1,29 @@
 @mixin form-grid {
 	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--theme--form--row-gap) var(--theme--form--column-gap);
+
+	.type-label {
+		margin-bottom: 8px;
+	}
+
+	.field {
+		grid-column: 1 / -1;
+	}
+
+	.half {
+		@media (min-width: 960px) {
+			grid-column: span 1;
+		}
+	}
+
+	.full {
+		grid-column: 1 / -1;
+	}
+}
+
+@mixin fields-grid {
+	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	gap: var(--theme--form--row-gap) var(--theme--form--column-gap);
 
@@ -7,18 +31,6 @@
 		grid-template-columns:
 			repeat(12, minmax(0, var(--form-column-max-width)))
 			[fill];
-	}
-
-	.type-label {
-		margin-bottom: 8px;
-	}
-
-	.field {
-		grid-column: start / fill;
-
-		@media (min-width: 960px) {
-			grid-column: start / full;
-		}
 	}
 
 	.quarter {
