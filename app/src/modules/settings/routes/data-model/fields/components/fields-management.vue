@@ -184,6 +184,22 @@ async function setNestedSort(updates?: Field[]) {
 	margin-bottom: var(--theme--form--row-gap);
 	width: 100%;
 
+	.sixth {
+		grid-column: span 2;
+
+		@media (max-width: 959px) {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.fifth {
+		grid-column: span 2.4;
+
+		@media (max-width: 959px) {
+			grid-column: 1 / -1;
+		}
+	}
+
 	.quarter {
 		grid-column: span 3;
 

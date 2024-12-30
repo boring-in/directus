@@ -33,6 +33,22 @@
 			[fill];
 	}
 
+	.sixth {
+		grid-column: span 2;
+
+		@media (max-width: 959px) {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.fifth {
+		grid-column: span 2.4;
+
+		@media (max-width: 959px) {
+			grid-column: 1 / -1;
+		}
+	}
+
 	.quarter {
 		grid-column: span 3;
 

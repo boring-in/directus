@@ -60,6 +60,24 @@ const duplicable = computed(() => localType.value === 'standard' && isPrimaryKey
 
 			<v-list-item
 				clickable
+				:disabled="field.meta?.width === 'sixth' || localType === 'group'"
+				@click="$emit('setWidth', 'sixth')"
+			>
+				<v-list-item-icon><v-icon name="view_module" /></v-list-item-icon>
+				<v-list-item-content>{{ t('sixth_width') }}</v-list-item-content>
+			</v-list-item>
+
+			<v-list-item
+				clickable
+				:disabled="field.meta?.width === 'fifth' || localType === 'group'"
+				@click="$emit('setWidth', 'fifth')"
+			>
+				<v-list-item-icon><v-icon name="view_comfy" /></v-list-item-icon>
+				<v-list-item-content>{{ t('fifth_width') }}</v-list-item-content>
+			</v-list-item>
+
+			<v-list-item
+				clickable
 				:disabled="field.meta?.width === 'quarter' || localType === 'group'"
 				@click="$emit('setWidth', 'quarter')"
 			>
