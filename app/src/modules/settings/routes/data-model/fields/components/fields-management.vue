@@ -179,32 +179,27 @@ async function setNestedSort(updates?: Field[]) {
 .field-grid {
 	position: relative;
 	display: grid;
-	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-	padding-bottom: 24px;
+	grid-template-columns: repeat(12, 1fr);
+	gap: var(--theme--form--column-gap);
+	margin-bottom: var(--theme--form--row-gap);
 }
 
 .field-select {
-	margin: 4px;
+	margin: 0;
 }
 
 .field-select:deep(.field-grid) {
-	grid-gap: 0;
+	grid-gap: var(--theme--form--column-gap);
 }
 
-.field-select:deep(.field-grid.group.full.nested) {
-	margin: 4px 0;
-
-	.field-select {
-		margin: 4px;
-	}
+.field-select:deep(.field-grid.group.nested) {
+	margin: var(--theme--form--row-gap) 0;
 }
 
 .add-field {
 	--v-button-font-size: 14px;
 	--v-button-background-color: var(--theme--primary);
 	--v-button-background-color-hover: var(--theme--primary-accent);
-
-	margin-top: -12px;
 }
 
 .add-field-advanced {

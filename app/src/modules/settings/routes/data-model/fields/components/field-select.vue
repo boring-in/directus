@@ -185,7 +185,7 @@ const tFieldType = (type: string) => t(type === 'geometry' ? 'geometry.All' : ty
 		<template v-else>
 			<draggable
 				v-if="localType === 'group'"
-				class="field-grid group full nested"
+				class="field-grid group nested"
 				:model-value="nestedFields"
 				handle=".drag-handle"
 				:group="{ name: 'fields' }"
@@ -196,7 +196,7 @@ const tFieldType = (type: string) => t(type === 'geometry' ? 'geometry.All' : ty
 				@update:model-value="onGroupSortChange"
 			>
 				<template #header>
-					<div class="header full">
+					<div class="header">
 						<v-icon class="drag-handle" name="drag_indicator" @click.stop />
 						<span class="name">
 							{{ field.field }}
@@ -219,7 +219,7 @@ const tFieldType = (type: string) => t(type === 'geometry' ? 'geometry.All' : ty
 				</template>
 			</draggable>
 
-			<v-input v-else class="field" :class="{ hidden }" readonly>
+			<v-input v-else class="field" :class="[field.meta?.width || 'full', { hidden }]" readonly>
 				<template #prepend>
 					<v-icon class="drag-handle" name="drag_indicator" @click.stop />
 				</template>
@@ -324,9 +324,27 @@ const tFieldType = (type: string) => t(type === 'geometry' ? 'geometry.All' : ty
 	--theme--form--field--input--padding: 8px;
 }
 
-.full,
+.quarter {
+	grid-column: span 3;
+}
+
+.third {
+	grid-column: span 4;
+}
+
+.half,
+.half-left,
+.half-space,
+.half-right {
+	grid-column: span 6;
+}
+
+.full {
+	grid-column: 1 / -1;
+}
+
 .fill {
-	grid-column: 1 / span 2;
+	grid-column: 1 / -1;
 }
 
 .v-input.monospace {
@@ -433,12 +451,8 @@ const tFieldType = (type: string) => t(type === 'geometry' ? 'geometry.All' : ty
 .field-grid {
 	position: relative;
 	display: grid;
-	grid-gap: 8px;
-	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-
-	& + & {
-		margin-top: 8px;
-	}
+	grid-gap: var(--theme--form--column-gap);
+	grid-template-columns: repeat(12, 1fr);
 
 	&.nested {
 		.field :deep(.input) {
@@ -499,7 +513,7 @@ const tFieldType = (type: string) => t(type === 'geometry' ? 'geometry.All' : ty
 
 .icons {
 	* + *:not(:last-child) {
-		margin-left: 8px;
+		margin-left: var(--theme--form--column-gap);
 	}
 }
 
