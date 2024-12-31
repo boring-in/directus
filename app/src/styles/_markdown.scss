@@ -11,7 +11,7 @@ h1 {
 	margin-bottom: 0;
 	color: var(--theme--foreground-accent);
 	font-weight: 700;
-	font-size: 36px;
+	font-size: var(--theme--markdown-h1-font-size);
 	line-height: 46px;
 }
 
@@ -20,7 +20,7 @@ h2 {
 	margin-bottom: 0;
 	color: var(--theme--foreground-accent);
 	font-weight: 700;
-	font-size: 24px;
+	font-size: var(--theme--markdown-h2-font-size);
 	line-height: 34px;
 }
 
@@ -29,7 +29,7 @@ h3 {
 	margin-bottom: 0;
 	color: var(--theme--foreground-accent);
 	font-weight: 700;
-	font-size: 19px;
+	font-size: var(--theme--markdown-h3-font-size);
 	line-height: 29px;
 }
 
@@ -38,7 +38,7 @@ h4 {
 	margin-bottom: 0;
 	color: var(--theme--foreground-accent);
 	font-weight: 700;
-	font-size: 16px;
+	font-size: var(--theme--markdown-h4-font-size);
 	line-height: 26px;
 }
 
@@ -47,7 +47,7 @@ h5 {
 	margin-bottom: 0;
 	color: var(--theme--foreground-accent);
 	font-weight: 700;
-	font-size: 14px;
+	font-size: var(--theme--markdown-h5-font-size);
 	line-height: 24px;
 }
 
@@ -56,14 +56,14 @@ h6 {
 	margin-bottom: 0;
 	color: var(--theme--foreground-accent);
 	font-weight: 700;
-	font-size: 12px;
+	font-size: var(--theme--markdown-h6-font-size);
 	line-height: 22px;
 }
 
 p {
 	margin: 1.5em 0;
 	font-weight: 500;
-	font-size: 15px;
+	font-size: var(--theme--markdown-paragraph-font-size);
 	line-height: 24px;
 }
 
@@ -76,7 +76,7 @@ ul,
 ol {
 	margin: 1.5em 0;
 	font-weight: 500;
-	font-size: 15px;
+	font-size: var(--theme--markdown-list-font-size);
 	line-height: 24px;
 }
 
@@ -95,7 +95,7 @@ strong {
 code {
 	padding: 2px 4px;
 	font-weight: 500;
-	font-size: 15px;
+	font-size: var(--theme--markdown-code-font-size);
 	font-family: var(--theme--fonts--monospace--font-family), monospace;
 	line-height: 24px;
 	overflow-wrap: break-word;
@@ -107,7 +107,7 @@ pre {
 	padding: 1em;
 	overflow: auto;
 	font-weight: 500;
-	font-size: 15px;
+	font-size: var(--theme--markdown-pre-font-size);
 	font-family: var(--theme--fonts--monospace--font-family), monospace;
 	line-height: 24px;
 	background-color: var(--theme--background-normal);
@@ -118,7 +118,7 @@ blockquote {
 	margin-left: 0px;
 	padding-left: 1em;
 	font-weight: 500;
-	font-size: 15px;
+	font-size: var(--theme--markdown-blockquote-font-size);
 	line-height: 24px;
 	border-left: 2px solid var(--theme--form--field--input--border-color);
 }
@@ -145,7 +145,7 @@ hr {
 
 table {
 	font-weight: 500;
-	font-size: 15px;
+	font-size: var(--theme--markdown-table-font-size);
 	line-height: 24px;
 	border-collapse: collapse;
 }

@@ -280,7 +280,7 @@ async function onClick(event: MouseEvent) {
 	padding: var(--v-button-padding, 0 19px);
 	color: var(--v-button-color, var(--foreground-inverted));
 	font-weight: var(--v-button-font-weight, 600);
-	font-size: var(--v-button-font-size, 16px);
+	font-size: var(--v-button-font-size, var(--theme--fonts--sans--font-size));
 	line-height: var(--v-button-line-height, 22px);
 	text-decoration: none;
 	background-color: var(--v-button-background-color, var(--theme--primary));
@@ -353,7 +353,7 @@ async function onClick(event: MouseEvent) {
 
 .x-small {
 	--v-button-height: 28px;
-	--v-button-font-size: 12px;
+	--v-button-font-size: calc(var(--theme--fonts--sans--font-size) * 0.75);
 	--v-button-min-width: 60px;
 
 	padding: 0 12px;
@@ -361,7 +361,7 @@ async function onClick(event: MouseEvent) {
 
 .small {
 	--v-button-height: 36px;
-	--v-button-font-size: 14px;
+	--v-button-font-size: calc(var(--theme--fonts--sans--font-size) * 0.875);
 	--v-button-min-width: 120px;
 
 	padding: 0 12px;
@@ -376,7 +376,7 @@ async function onClick(event: MouseEvent) {
 
 .x-large {
 	--v-button-height: 60px;
-	--v-button-font-size: 18px;
+	--v-button-font-size: calc(var(--theme--fonts--sans--font-size) * 1.125);
 	--v-button-min-width: 180px;
 
 	padding: 0 12px;

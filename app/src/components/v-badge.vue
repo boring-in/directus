@@ -74,7 +74,7 @@ withDefaults(
 		padding: 0 5px;
 		color: var(--v-badge-color, var(--white));
 		font-weight: 800;
-		font-size: 9px;
+		font-size: calc(var(--theme--fonts--sans--font-size) * 0.5625);  /* 9/16 = 0.5625 */
 		background-color: var(--v-badge-background-color, var(--red));
 		border-radius: calc(var(--v-badge-size, 16px) / 2);
 

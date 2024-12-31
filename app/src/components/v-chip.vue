@@ -110,6 +110,7 @@ function onCloseClick(event: MouseEvent) {
 	color: var(--v-chip-color, var(--theme--foreground));
 	font-weight: var(--weight-normal);
 	font-family: var(--v-chip-font-family);
+	font-size: var(--theme--fonts--sans--font-size);
 	line-height: 22px;
 	background-color: var(--v-chip-background-color, var(--theme--background-normal));
 	border: var(--theme--border-width) solid
@@ -142,28 +143,28 @@ function onCloseClick(event: MouseEvent) {
 	&.x-small {
 		height: 20px;
 		padding: var(--v-chip-padding, 0 6px);
-		font-size: 12px;
+		font-size: calc(var(--theme--fonts--sans--font-size) * 0.75);
 		border-radius: 10px;
 	}
 
 	&.small {
 		height: 24px;
 		padding: var(--v-chip-padding, 0 8px);
-		font-size: 14px;
+		font-size: calc(var(--theme--fonts--sans--font-size) * 0.875);
 		border-radius: 12px;
 	}
 
 	&.large {
 		height: 44px;
 		padding: var(--v-chip-padding, 0 20px);
-		font-size: 16px;
+		font-size: var(--theme--fonts--sans--font-size);
 		border-radius: 22px;
 	}
 
 	&.x-large {
 		height: 48px;
 		padding: var(--v-chip-padding, 0 20px);
-		font-size: 18px;
+		font-size: calc(var(--theme--fonts--sans--font-size) * 1.125);
 		border-radius: 24px;
 	}
 

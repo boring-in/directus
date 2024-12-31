@@ -46,22 +46,42 @@ export default defineTheme({
 		dangerSubdued: 'color-mix(in srgb, var(--theme--background), var(--theme--danger) 50%)',
 		dangerAccent: 'color-mix(in srgb, var(--theme--danger), #2e3c43 25%)',
 
+		markdownH1FontSize: '36px',
+		markdownH2FontSize: '24px',
+		markdownH3FontSize: '19px',
+		markdownH4FontSize: '16px',
+		markdownH5FontSize: '14px',
+		markdownH6FontSize: '12px',
+		markdownParagraphFontSize: '15px',
+		markdownListFontSize: '15px',
+		markdownCodeFontSize: '15px',
+		markdownPreFontSize: '15px',
+		markdownBlockquoteFontSize: '15px',
+		markdownTableFontSize: '15px',
+
 		fonts: {
+			base: {
+				fontSize: '16px',
+			},
 			display: {
 				fontFamily: '"Inter", system-ui',
 				fontWeight: '700',
+				fontSize: '1.5rem',
 			},
 			sans: {
 				fontFamily: '"Inter", system-ui',
 				fontWeight: '500',
+				fontSize: '1rem',
 			},
 			serif: {
 				fontFamily: '"Merriweather", serif',
 				fontWeight: '500',
+				fontSize: '1rem',
 			},
 			monospace: {
 				fontFamily: '"Fira Mono", monospace',
 				fontWeight: '500',
+				fontSize: '0.9375rem',
 			},
 		},
 

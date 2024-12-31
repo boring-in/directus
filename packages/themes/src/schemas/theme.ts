@@ -100,31 +100,55 @@ const Rules = Type.Object({
 	dangerAccent: Type.Optional(Type.Ref(Color)),
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Markdown font sizes
+	markdownH1FontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+	markdownH2FontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+	markdownH3FontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+	markdownH4FontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+	markdownH5FontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+	markdownH6FontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+	markdownParagraphFontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+	markdownListFontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+	markdownCodeFontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+	markdownPreFontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+	markdownBlockquoteFontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+	markdownTableFontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Base fonts
 	fonts: Type.Optional(
 		Type.Object({
+			base: Type.Optional(
+				Type.Object({
+					fontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
+				}),
+			),
 			display: Type.Optional(
 				Type.Object({
 					fontFamily: Type.Optional(Type.Ref(FamilyName)),
 					fontWeight: Type.Optional(Type.Ref(FontWeight)),
+					fontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
 				}),
 			),
 			sans: Type.Optional(
 				Type.Object({
 					fontFamily: Type.Optional(Type.Ref(FamilyName)),
 					fontWeight: Type.Optional(Type.Ref(FontWeight)),
+					fontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
 				}),
 			),
 			serif: Type.Optional(
 				Type.Object({
 					fontFamily: Type.Optional(Type.Ref(FamilyName)),
 					fontWeight: Type.Optional(Type.Ref(FontWeight)),
+					fontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
 				}),
 			),
 			monospace: Type.Optional(
 				Type.Object({
 					fontFamily: Type.Optional(Type.Ref(FamilyName)),
 					fontWeight: Type.Optional(Type.Ref(FontWeight)),
+					fontSize: Type.Optional(Type.Union([Type.Ref(Length), Type.Ref(Percentage)])),
 				}),
 			),
 		}),
