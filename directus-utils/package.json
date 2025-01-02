@@ -1,19 +1,19 @@
 {
 	"name": "directus-utils",
-	"description": "Please enter a description for your extension",
+	"description": "Hook extension to embed custom JavaScript code",
 	"icon": "extension",
 	"version": "1.0.0",
 	"keywords": [
 		"directus",
 		"directus-extension",
-		"directus-extension-interface"
+		"directus-extension-hook"
 	],
 	"type": "module",
 	"files": [
 		"dist"
 	],
 	"directus:extension": {
-		"type": "interface",
+		"type": "hook",
 		"path": "dist/index.js",
 		"source": "src/index.ts",
 		"host": "^10.10.0"
@@ -25,7 +25,6 @@
 	},
 	"devDependencies": {
 		"@directus/extensions-sdk": "12.1.4",
-		"typescript": "^5.7.2",
-		"vue": "^3.5.13"
+		"typescript": "^5.7.2"
 	}
 }

@@ -1,12 +1,13 @@
-import { defineInterface } from '@directus/extensions-sdk';
-import InterfaceComponent from './interface.vue';
+type HookExtensionContext = {
+	embed: (location: 'head' | 'body', code: string | (() => string)) => void;
+};
 
-export default defineInterface({
-	id: 'custom',
-	name: 'Custom',
-	icon: 'box',
-	description: 'This is my custom interface!',
-	component: InterfaceComponent,
-	options: null,
-	types: ['string'],
-});
+export default ({ embed }: HookExtensionContext) => {
+	embed(
+		'head',
+		`<script>
+			console.log('Hello from Directus Utils Extension!');
+			console.log('Current timestamp:', new Date().toISOString());
+		</script>`
+	);
+};
