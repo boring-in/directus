@@ -1,10 +1,10 @@
-/*eslint-env node*/
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{html,js}"],
+  content: [
+    "./src/**/*.{js,ts,vue}",
+  ],
   theme: {
     extend: {},
   },
   plugins: [],
 }
-
