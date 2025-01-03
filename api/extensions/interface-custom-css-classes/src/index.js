@@ -1,10 +1,10 @@
 import InterfaceComponent from './interface.vue';
 
 export default {
-  id: 'class-adder',
-  name: 'Class Adder',
+  id: 'custom-css-classes',
+  name: 'Custom CSS Classes',
   icon: 'box',
-  description: 'Adds and removes custom classes from selected DOM elements',
+  description: 'Efficiently manages CSS classes on DOM elements with optimized rendering and performance',
   component: InterfaceComponent,
   options: [
     {
@@ -23,7 +23,7 @@ export default {
               meta: {
                 interface: 'input',
                 options: {
-                  placeholder: 'Enter CSS selector (e.g., #id or .class)'
+              placeholder: 'Enter CSS selector (e.g., #id, .class, [data-*]). Use specific selectors for better performance.'
                 }
               }
             },
@@ -34,7 +34,7 @@ export default {
               meta: {
                 interface: 'input',
                 options: {
-                  placeholder: 'Enter class names to add (space-separated)'
+              placeholder: 'Enter class names to add (space-separated). Group related classes for better performance.'
                 }
               }
             },
@@ -45,7 +45,7 @@ export default {
               meta: {
                 interface: 'input',
                 options: {
-                  placeholder: 'Enter class names to remove (space-separated)'
+              placeholder: 'Enter class names to remove (space-separated). Group related classes for better performance.'
                 }
               }
             }
