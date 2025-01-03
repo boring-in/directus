@@ -1,0 +1,34 @@
+{
+	"name": "theme-newg",
+	"description": "Directus New Gen Theme (Tailwind CSS)",
+	"icon": "extension",
+	"version": "1.0.0",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-theme"
+	],
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"directus:extension": {
+		"type": "theme",
+		"path": "dist/index.js",
+		"source": "src/index.js",
+		"host": "^10.10.0"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "^12.1.4",
+		"autoprefixer": "^10.4.19",
+		"postcss": "^8.4.38",
+		"tailwindcss": "^3.4.17",
+		"typescript": "^5.7.2",
+		"vue": "^3.5.13"
+	}
+}

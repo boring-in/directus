@@ -45,7 +45,8 @@ TODO
 /schema.json
 /api/uploads/
 #/api/extensions/*
-#!/api/extensions/interface-custom-css-classes
+!/api/extensions/interface-custom-css-classes
+!/api/extensions/theme-newgen
 /tests/blackbox/uploads/
 /tests/blackbox/server-log-*
 /tests/blackbox/sequencer-data.json
