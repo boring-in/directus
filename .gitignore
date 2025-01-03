@@ -44,7 +44,8 @@ TODO
 /schema.yaml
 /schema.json
 /api/uploads/
-/api/extensions/
+/api/extensions/*
+!/api/extensions/interface-custom-css-class-adder
 /tests/blackbox/uploads/
 /tests/blackbox/server-log-*
 /tests/blackbox/sequencer-data.json
