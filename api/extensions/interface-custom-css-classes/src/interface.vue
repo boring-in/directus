@@ -84,16 +84,51 @@
 		// Initialize class management
 		updateClasses();
   
-		// Create style tag with optimized rules
+		// Create style tag with layer system
 		styleElement = document.createElement('style');
-		const styleRules = props.selectorClassPairs
+		// Define layers for better cascade control
+		const layerDefinition = `@layer reset, base, custom-override;`;
+		const styleRules = layerDefinition + props.selectorClassPairs
 		  .filter(pair => pair.selector && pair.classesToAdd)
 		  .map(pair => {
 			const classes = pair.classesToAdd.split(' ')
 			  .map(cls => cls.trim())
 			  .filter(Boolean)
 			  .join('.');
-			return `${pair.selector}.${classes} { contain: layout style; /* Managed by Class Adder */ }`;
+			// Generate high-specificity selectors for each class
+			const classSelectors = classes.split('.')
+			  .filter(Boolean)
+			  .map(cls => `
+				/* Reset layer */
+				@layer reset {
+				  :root {
+					--${cls}-override: initial;
+				  }
+				}
+				/* Base layer with high specificity */
+				@layer base {
+				  html body ${pair.selector}.${cls},
+				  html body ${pair.selector}.${cls},
+				  html body ${pair.selector}[data-content].${cls} {
+					all: revert;
+					contain: layout style;
+					--${cls}-override: inherit;
+				  }
+				}
+				/* Custom override layer with maximum specificity */
+				@layer custom-override {
+				  html body ${pair.selector}.${cls}[class],
+				  html body ${pair.selector}[data-content].${cls}[class],
+				  html body div${pair.selector}.${cls},
+				  html body div${pair.selector}[data-content].${cls},
+				  #app ${pair.selector}.${cls} {
+					all: inherit !important;
+					contain: layout style !important;
+					--${cls}-override: inherit !important;
+				  }
+				}
+			  `).join('\n');
+			return classSelectors;
 		  })
 		  .join('\n');
 		
