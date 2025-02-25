@@ -1,0 +1,3 @@
+1.Do not remove comments. They are required.
+2.Do not remove commented code. If its in a file , then it means it is required.
+3.Create comments explaining created functions and class functionality.

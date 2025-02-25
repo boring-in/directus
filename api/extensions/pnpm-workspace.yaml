@@ -1,0 +1,11 @@
+packages:
+  # Include all extension directories
+  - 'display-*'
+  - 'endpoint-*'
+  - 'hook-*'
+  - 'interface-*'
+  - 'module-*'
+  - 'operation-*'
+  - 'theme-*'
+  # Exclude docs directory
+  - '!docs'

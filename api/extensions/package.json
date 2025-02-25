@@ -1,0 +1,14 @@
+{
+	"name": "boringin-extensions",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"deploy": "node deploy.js",
+		"build": "pnpm install --recursive && pnpm --recursive run build"
+	},
+	"dependencies": {
+		"@directus/cli": "^9.14.3",
+		"@directus/extensions-sdk": "^12.1.4"
+	},
+	"packageManager": "pnpm@10.5.0"
+}

@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables */
+:root {
+  --form-column-max-width: 500px;
+  --primary-color: #3490dc;
+  --secondary-color: #ffed4a;
+  --danger-color: #e3342f;
+  --primary-font-size: 16px;
+  --atribute-value-color: #ffff00;
+  --selected-color: #6644ff;
+  --unselected-color: #e4eaf1;
+}
+/*  */
+
+/* Grid Form */
+.no-grid {
+  @apply /*!flex !flex-row !flex-wrap*/ !max-w-full;
+}
+
+.private-view {
+  /* Add any specific styles if needed */
+}
+
+.extension-toolbar-wrapper[field="Rejection"]{
+  display: none;
+}
+
+.products-group{
+  display: none;
+}
+
+.shipment-group{
+  display: none;
+}
+.carrier-group{
+  display: none;
+}
+.order-type-group{
+  display: none;
+}
+.details-group{
+  display: none;
+}

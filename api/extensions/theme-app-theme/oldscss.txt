@@ -1,0 +1,183 @@
+
+/* Global Styles */
+.body-custom {
+  @apply !w-full;
+}
+
+.json_display_wrapper {
+  display: block !important;
+}
+
+.json_list {
+  @apply flex flex-row flex-wrap content-center pr-10 pb-2;
+}
+
+.json_list .name {
+  @apply pr-3;
+}
+
+.json_list .value {
+  @apply bg-yellow-300 font-semibold;
+}
+
+/* Tab Panels */
+.body-custom .tab-panel {
+  @apply !flex !flex-row !gap-2 w-full;
+}
+
+.body-custom .tab-panel .field {
+  @apply w-full;
+}
+
+.v-button[aria-selected="true"] button {
+ background-color: var(--selected-color) !important;
+}
+
+.v-button[aria-selected="true"] button span {
+  color: white !important;
+}
+
+.v-button[aria-selected="false"] button{
+ background-color: var(--unselected-color) !important;
+}
+.v-button[aria-selected="false"] button span{
+  color: black !important;
+
+}
+/* Table Rows */
+.body-custom .table-row .render-template[title="stock"],
+.body-custom .table-row .render-template[title="attributes"] {
+  display: contents !important;
+}
+
+/* Details */
+.details {
+  @apply !bg-slate-200 !flex-col !gap-1 !w-full !flex !flex-row !justify-between !px-2 !py-2;
+}
+
+.details .v-form {
+  @apply !w-full;
+}
+
+.details .v-form .field {
+  @apply !flex !flex-row !justify-between !items-center;
+}
+
+.details .v-form .field .interface .input.disabled input {
+  pointer-events: none !important;
+  @apply !select-none !border-none;
+}
+
+.details .v-form .field .field-name {
+  @apply !cursor-default;
+}
+
+.details .v-form .field-label.type-label,
+.details .field-label {
+  font-weight: 400 !important;
+  font-style: normal !important;
+  margin: 0 !important;
+}
+
+.details .field-label .v-text-overflow::after,
+.details .field .interface .input.disabled i::after {
+  content: ": " !important;
+}
+
+.input.disabled {
+  @apply !bg-inherit;
+}
+.input.disabled input {
+  font-size: 1rem;
+  @apply text-black;
+}
+
+.details .v-input {
+  width: 250px !important;
+  @apply !px-2 !py-2;
+}
+
+.field .input.disabled {
+  @apply !w-64;
+}
+
+
+
+.details .input.disabled div.input {
+  @apply  !font-extrabold  w-full ;
+  background-color: unset !important;
+  border: 0 !important;
+
+}
+
+.details span.step-up,
+.unimportant span.step-down,
+.details span.ctx-arrow {
+  display: none !important;
+}
+
+/* Input Styles */
+.v-input {
+  width: 100% !important;
+}
+
+.v-input .input {
+  width: 100% !important;
+}
+
+.v-input.disabled .v-icon.disabled {
+  display: none;
+}
+
+/* Group Tabs */
+.group-tabs .v-form .field {
+  width: 100% !important;
+  /* display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important; */
+}
+
+/* Stock Status */
+.stock {
+
+}
+
+.stock div {
+  @apply !mr-3;
+}
+
+.stock .out_of_stock {
+  @apply !bg-red-200 !font-extrabold !text-xl;
+}
+
+.stock .in_stock {
+  @apply !bg-green-200 !font-extrabold !text-xl;
+}
+
+/* Table Cells */
+.table-row .cell,
+.table-header .cell {
+  @apply !pt-1 !pb-1 !pl-1 !pr-1;
+}
+
+.table-header .cell .content > span {
+  @apply !whitespace-normal;
+}
+div[title="attributes"].render-template {
+  /* Your styles here */
+  @apply !contents
+}
+div[title="stock"].render-template {
+  /* Your styles here */
+  @apply !contents
+}
+
+/* Buttons */
+button {
+  @apply !mt-2 !mb-2;
+}
+
+/* Body Adjustments */
+body .private-view #main-content {
+  @apply !text-xs;
+}

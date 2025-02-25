@@ -1,0 +1,37 @@
+{
+	"name": "native",
+	"version": "1.0.0",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-custom-endpoint"
+	],
+	"directus:extension": {
+		"type": "endpoint",
+		"path": "dist/index.js",
+		"source": "src/index.ts",
+		"host": "^9.21.2"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "9.21.2",
+		"@types/mysql": "^2.15.26",
+		"@types/node": "^22.10.2",
+		"@types/woocommerce__woocommerce-rest-api": "^1.0.5",
+		"typescript": "^5.7.2"
+	},
+	"dependencies": {
+		"@directus/cli": "^9.14.3",
+		"@woocommerce/woocommerce-rest-api": "^1.0.1",
+		"liquidjs": "^10.20.3",
+		"mysql": "^2.18.1",
+		"puppeteer": "^24.2.1",
+		"simple-statistics": "^7.8.7",
+		"woocommerce": "^2.4.0",
+		"woocommerce-api": "^1.5.0",
+		"xml-js": "^1.6.11"
+	}
+}

@@ -1,0 +1,5 @@
+**/.DS_Store
+**/.registry
+**/node_modules
+**/dist
+**/*lock*
