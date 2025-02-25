@@ -423,7 +423,30 @@ function useRawEditor() {
 @use '@/styles/mixins';
 
 .v-form {
-	@include mixins.form-grid;
+	display: grid;
+	gap: var(--theme--form--row-gap) var(--theme--form--column-gap);
+
+	&.grid {
+		@include fields-grid;
+	}
+
+	&:not(.grid) {
+		grid-template-columns: repeat(2, 1fr);
+
+		.field {
+			grid-column: 1 / -1;
+		}
+
+		.half {
+			@media (min-width: 960px) {
+				grid-column: span 1;
+			}
+		}
+
+		.full {
+			grid-column: 1 / -1;
+		}
+	}
 
 	.first-visible-field :deep(.presentation-divider) {
 		margin-top: 0;
